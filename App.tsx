@@ -6,7 +6,7 @@ import {
     IconButton
 } from 'react-native-paper';
 import { supabase } from './lib/supabase';
-import MapView, { Marker } from 'react-native-maps';
+import MapView, { Callout, Marker } from 'react-native-maps';
 import * as Location from 'expo-location';
 
 export default function App() {
@@ -85,7 +85,11 @@ export default function App() {
                     title={point.name}
                     coordinate={{ latitude: point.latitude, longitude: point.longitude }}
                     onPress={() => setCurr(point)}
-                />
+                >
+                <View style={{backgroundColor: '#00a152', width: 20, height: 20, borderRadius: 20}}></View>
+                <Callout tooltip={false}>
+                </Callout>
+                </Marker>
             )}
 
             </MapView>
