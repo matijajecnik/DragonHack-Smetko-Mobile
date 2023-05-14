@@ -6,6 +6,12 @@ module.exports = function(api) {
       production: {
         plugins: [
           'react-native-paper/babel',
+          [
+            "expo-location",
+            {
+              "locationAlwaysAndWhenInUsePermission": "Allow $(PRODUCT_NAME) to use your location."
+            }
+          ]
         ],
       },
     },
